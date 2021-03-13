@@ -5,8 +5,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@hasSection ('title') @yield('title') @else {{ config('app.name') }} @endif</title>
-</head>
+
+    <!-- Styles -->
+    <link href="{{ mix('css/admin.css') }}" rel="stylesheet"></head>
+
+    <!-- Scripts -->
+    <script src="{{ mix('js/admin.js') }}" defer></script>
 <body>
-    @yield('content')
+    <main>
+        @yield('content')
+    </main>
 </body>
 </html>
