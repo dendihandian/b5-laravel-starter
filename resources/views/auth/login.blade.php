@@ -1,6 +1,6 @@
 @extends('layouts.auth')
 
-@section('title', 'Login')
+@section('title', __('Login'))
 
 @section('content')
     <div class="container vh-100 d-flex justify-content-center align-items-center">
@@ -13,7 +13,7 @@
                     </div>
                     <div class="mb-3">
                         <label class="form-label" for="email">{{ __('Email address') }}</label>
-                        <input class="form-control" type="email" name="email" id="email" aria-describedby="email_help">
+                        <input class="form-control" type="email" name="email" id="email" value="{{ old('email') }}" aria-describedby="email_help">
                         @error('email')
                         <div class="form-text text-danger" id="email_help">{{ $message }}</div>
                         @enderror
@@ -27,7 +27,8 @@
                     </div>
                     <div class="w-100 d-flex flex-column justify-content-center align-items-center">
                         <button class="btn btn-primary text-center" type="submit">{{ __('Login') }}</button>
-                        <a class="mt-2" href="#">Create Account?</a>
+                        <a class="small mt-2" href="{{ route('register') }}">{{ __('Forgot your password?') }}</a>
+                        <a class="small mt-2" href="{{ route('register') }}">{{ __('Create an account?') }}</a>
                     </div>
                 </form>
             </div>
