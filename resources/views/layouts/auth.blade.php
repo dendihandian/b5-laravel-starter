@@ -12,7 +12,7 @@
     <!-- Scripts -->
     <script src="{{ mix('js/admin.js') }}" defer></script>
 <body>
-    <main>
+    <main class="bg-primary">
         @yield('content')
     </main>
 </body>
