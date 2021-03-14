@@ -13,22 +13,22 @@
                     </div>
                     <div class="mb-3">
                         <label class="form-label" for="email">{{ __('Email address') }}</label>
-                        <input class="form-control" type="email" name="email" id="email" value="{{ old('email') }}" aria-describedby="email_help">
+                        <input class="form-control @error('email') is-invalid @enderror" type="email" name="email" id="email" value="{{ old('email') }}" aria-describedby="email_help">
                         @error('email')
-                        <div class="form-text text-danger" id="email_help">{{ $message }}</div>
+                        <div class="form-text invalid-feedback text-danger" id="email_help">{{ $message }}</div>
                         @enderror
                     </div>
                     <div class="mb-3">
                         <label class="form-label" for="password">{{ __('Password') }}</label>
-                        <input class="form-control" type="password" id="password">
+                        <input class="form-control @error('email') is-invalid @enderror" type="password" id="password">
                         @error('password')
-                        <div class="form-text text-danger" id="password_help">{{ $message }}</div>
+                        <div class="form-text invalid-feedback text-danger" id="password_help">{{ $message }}</div>
                         @enderror
                     </div>
                     <div class="w-100 d-flex flex-column justify-content-center align-items-center">
                         <button class="btn btn-primary text-center" type="submit">{{ __('Login') }}</button>
-                        <a class="small mt-2" href="{{ route('register') }}">{{ __('Forgot your password?') }}</a>
-                        <a class="small mt-2" href="{{ route('register') }}">{{ __('Create an account?') }}</a>
+                        <a class="small text-decoration-none mt-2" href="{{ route('register') }}">{{ __('Forgot your password?') }}</a>
+                        <a class="small text-decoration-none mt-2" href="{{ route('register') }}">{{ __('Create an account?') }}</a>
                     </div>
                 </form>
             </div>
